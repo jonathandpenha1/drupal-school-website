@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the user password reset form.
+ *
+ * Available variables:
+ * - name : the input name
+ * - mail : the description text about the form.
+ * - actions : the submit buttons
+ * - login_link: the login link.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ form.name }}
+{{ form.mail }}
+<div class="nice-login__pass__actions">
+  {{ form.actions }}
+  {{ form.login_link }}
+</div>
+{{ form|without('name', 'mail', 'actions', 'login_link') }}

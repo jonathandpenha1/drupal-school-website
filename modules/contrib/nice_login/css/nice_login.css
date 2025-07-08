@@ -1,0 +1,53 @@
+.wrapper-nice-login {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.nice-login-create {
+  display: inline-block;
+}
+
+.nice-login-login {
+  display: inline-block;
+}
+
+.nice-login__login__actions {
+  display: flex;
+  align-items: center;
+}
+
+.nice-login__login__actions .form-actions {
+  padding-top: 0;
+}
+
+.nice-login__login__pass {
+  position: relative;
+}
+
+.nice-login-pass {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.8rem;
+}
+
+.nice-login__pass__actions {
+  display: flex;
+  align-items: center;
+}
+
+.nice-login__pass__actions .form-actions {
+  padding-top: 0;
+}
+
+.nice-login__register__actions {
+  display: flex;
+  align-items: center;
+}
+
+.nice-login__register__actions .form-actions {
+  padding-top: 0;
+}

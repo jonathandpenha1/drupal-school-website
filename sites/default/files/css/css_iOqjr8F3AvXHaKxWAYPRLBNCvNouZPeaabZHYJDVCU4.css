@@ -1,0 +1,5 @@
+/* @license GNU-GPL-2.0-or-later https://www.drupal.org/licensing/faq */
+.views-align-left{text-align:left;}.views-align-right{text-align:right;}.views-align-center{text-align:center;}.views-view-grid .views-col{float:left;}.views-view-grid .views-row{float:left;clear:both;width:100%;}.views-display-link + .views-display-link{margin-left:0.5em;}
+/* @license GNU-GPL-2.0-or-later https://github.com/woothemes/FlexSlider/blob/master/LICENSE.md */
+/* @license GNU-GPL-2.0-or-later https://www.drupal.org/licensing/faq */
+.flexslider .flex-direction-nav a,.flexslider .flex-direction-nav a{display:none;}.flexslider:hover .flex-direction-nav a,.flexslider:hover .flex-direction-nav a{display:block;}

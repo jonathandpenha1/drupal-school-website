@@ -1,0 +1,53 @@
+<?php
+use Drupal\Core\Database\Database;
+
+/**
+* Implements hook_schema().
+*/
+function db_students_schema() {
+    $schema['students'] = array(
+        'description' => 'The table for storing the students data.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The primary key for student.',
+                 'type' => 'serial',
+                 'not null' => TRUE,
+                 'unsigned' => TRUE, 
+                 ),
+'fname' => array(
+                'description' => 'Student Name.',
+                 'type' => 'varchar',
+                 'length' => 255,
+                 'not null' => TRUE,
+                 'default' => '', 
+                 
+                 ),
+'sname' => array(
+                'description' => 'Student last Name.',
+                 'type' => 'varchar',
+                 'length' => 255,
+                 'not null' => TRUE,
+                 'default' => '', 
+                 
+                 ),
+'age' => array(
+                'description' => 'Age of Student.',
+                 'type' => 'int',
+                 'length' => 100,
+                 'not null' => TRUE, 
+                 ),
+'marks' => array(
+                'description' => 'Marks of Student.',
+                 'type' => 'int',
+                 'length' => 100,
+                 'not null' => TRUE,
+                
+                 
+                 ),
+
+ 
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

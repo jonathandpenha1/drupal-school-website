@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ebt_carousel
+    - field.storage.block_content.field_ebt_carousel
+    - paragraphs.paragraphs_type.ebt_carousel
+  module:
+    - entity_reference_revisions
+id: block_content.ebt_carousel.field_ebt_carousel
+field_name: field_ebt_carousel
+entity_type: block_content
+bundle: ebt_carousel
+label: Carousel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ebt_carousel: ebt_carousel
+    target_bundles_drag_drop:
+      ebt_accordion:
+        weight: 5
+        enabled: false
+      ebt_carousel:
+        enabled: true
+        weight: 6
+      ebt_slideshow:
+        weight: 7
+        enabled: false
+      ebt_tab:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

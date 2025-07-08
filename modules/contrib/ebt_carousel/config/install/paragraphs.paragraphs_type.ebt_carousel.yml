@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ebt_carousel
+label: 'EBT Carousel item'
+icon_uuid: null
+icon_default: null
+description: 'Carousel section for EBT Carousel'
+behavior_plugins: {  }

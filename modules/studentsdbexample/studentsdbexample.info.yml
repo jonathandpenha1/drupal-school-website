@@ -1,0 +1,10 @@
+name: Students DB Example
+description: 'Students Drupal 8 DB Example Module.'
+type: module
+package: Students
+core_version_requirement: ^9 || ^10
+
+# Information added by Drupal.org packaging script on 2023-05-19
+version: '2.0.1'
+project: 'studentsdbexample'
+datestamp: 1684486775

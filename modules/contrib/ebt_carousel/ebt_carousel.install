@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the EBT Carousel module.
+ */
+
+use Drupal\media\Entity\MediaType;
+use Drupal\field\Entity\FieldConfig;
+
+/**
+ * Implements hook_requirements().
+ */
+function ebt_carousel_requirements($phase) {
+  if ($phase != 'install') {
+    return [];
+  }
+
+  if (class_exists('Drupal\media\Entity\MediaType')) {
+    foreach (MediaType::loadMultiple() as $type) {
+      if ($type->id() == 'image') {
+        return [];
+      }
+    }
+  }
+
+  return [
+    'ebt_carousel_media_type_image' => [
+      'title' => t('Media type Image'),
+      'value' => t('Not created'),
+      'description' => t('The EBT Carousel needs to be <a href="@url">created</a> "Image" Media type.', ['@url' => '/admin/structure/media']),
+      'severity' => REQUIREMENT_ERROR,
+    ],
+  ];
+}
+
+/**
+ * Enable Media module.
+ */
+function ebt_carousel_update_8001(&$sandbox) {
+  \Drupal::service('module_installer')->install(['media']);
+  \Drupal::service('module_installer')->install(['media_library']);
+}
+
+/**
+ * Set the label of "ebt_counter_item" as 'EBT Carousel item'.
+ */
+function ebt_carousel_update_9101() {
+
+  // Get the paragraph type entity.
+  $paragraph_type = \Drupal::entityTypeManager()->getStorage('paragraphs_type')->load('ebt_carousel');
+
+  // If empty for any reason, just skip this.
+  if (empty($paragraph_type)) {
+    return;
+  }
+
+  // Set the new label.
+  $paragraph_type->label = 'EBT Carousel item';
+
+  // Save the object.
+  $paragraph_type->save();
+
+}
+
+/**
+ * Set the field "field_ebt_carousel_image" as required.
+ */
+function ebt_carousel_update_9102() {
+
+  // Set the machine names.
+  $paragraph_type_id = 'ebt_carousel';
+  $field_name = 'field_ebt_carousel_image';
+
+  // Load the field configuration object.
+  $field_config = FieldConfig::loadByName('paragraph', $paragraph_type_id, $field_name);
+
+  // If the field doesn't exists, skip.
+  if (empty($field_config)) {
+    return;
+  }
+
+  // Set the field as required.
+  $field_config->setRequired(TRUE)->save();
+
+}

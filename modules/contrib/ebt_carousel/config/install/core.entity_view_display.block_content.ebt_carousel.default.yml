@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ebt_carousel
+    - field.field.block_content.ebt_carousel.field_ebt_carousel
+    - field.field.block_content.ebt_carousel.field_ebt_settings
+  module:
+    - ebt_core
+    - entity_reference_revisions
+id: block_content.ebt_carousel.default
+targetEntityType: block_content
+bundle: ebt_carousel
+mode: default
+content:
+  field_ebt_carousel:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ebt_settings:
+    type: ebt_settings_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

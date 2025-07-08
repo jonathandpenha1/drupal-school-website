@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the user login form.
+ *
+ * Available variables:
+ * - name : the input name
+ * - pass : the input password
+ * - actions : the submit buttons
+ * - reset_password_link: the reset password link.
+ * - register_link: the reset password link.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ form.name }}
+<div class="nice-login__login__pass">
+  {{ form.pass }}
+  {{ form.reset_password_link }}
+</div>
+
+<div class="nice-login__login__actions">
+  {{ form.actions }}
+  {{ form.register_link }}
+</div>
+{{ form|without('name', 'pass', 'actions', 'reset_password_link', 'register_link') }}

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ebt_carousel_caption
+    - paragraphs.paragraphs_type.ebt_carousel
+  module:
+    - text
+id: paragraph.ebt_carousel.field_ebt_carousel_caption
+field_name: field_ebt_carousel_caption
+entity_type: paragraph
+bundle: ebt_carousel
+label: 'Slide caption'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

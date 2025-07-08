@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Contains \Drupal\studentsdbexample.install.
+ */
+
+/**
+ * Contains DB schema.
+ *
+ * @return array
+ *   Return DB schema array.
+ */
+function studentsdbexample_schema() {
+  $schema['studentsdbexample'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'mobilenumber' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'age' => [
+        'type' => 'varchar',
+        'length' => 25,
+        'not null' => TRUE,
+      ],
+      'gender' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'website' => [
+        'type' => 'varchar',
+        'length' => 25,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

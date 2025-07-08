@@ -1,0 +1,31 @@
+studentsdbexample.studentsdbexample_controller_display:
+  path: '/studentsdbexample'
+  defaults:
+    _controller: '\Drupal\studentsdbexample\Controller\StudentsdbexampleController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+studentsdbexample.studentsdbexample_form:
+  path: '/studentsdbexample/form/studentsdbexample'
+  defaults:
+    _form: '\Drupal\studentsdbexample\Form\StudentsdbexampleForm'
+    _title: 'StudentsdbexampleForm'
+  requirements:
+    _access: 'access content'
+
+studentsdbexample.display_table_controller_display:
+  path: '/studentsdbexample/hello/table'
+  defaults:
+    _controller: '\Drupal\studentsdbexample\Controller\DisplayTableController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+studentsdbexample.delete_form:
+  path: '/studentsdbexample/form/delete/{cid}'
+  defaults:
+    _form: '\Drupal\studentsdbexample\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'access content'

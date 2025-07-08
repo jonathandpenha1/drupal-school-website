@@ -1,0 +1,7 @@
+student.add_student:
+path: '/students/add'
+defaults:
+_title: 'Add Students'
+_form: '\Drupal\students\Form\StudentForm'
+requirements:
+_access: 'TRUE'

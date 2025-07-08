@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains \Drupal\studentsdbexample.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function studentsdbexample_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the studentsdbexample module.
+    case 'help.page.studentsdbexample':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This dispaly information what you enter your application.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * We need to add this content at the theming layer.
+ *
+ * @return array
+ *   Return array of content.
+ */
+function studentsdbexample_theme() {
+  // We use a template file to allow for translation of blocks of content.
+  // Therefore we need to add this content at the theming layer.
+  return [
+    'studentsdbexample_description' => [
+      'template' => 'description',
+      'variables' => [],
+    ],
+  ];
+}
